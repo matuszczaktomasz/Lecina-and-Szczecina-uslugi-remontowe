@@ -1,0 +1,494 @@
+$main-color: #fcb500
+$bg-color: #f8f4f1
+$white-color: #ffffff
+$dark-color: #232323
+
+@mixin img-style
+    position: relative
+    background-size: cover
+    background-position: center
+    background-attachment: fixed
+    z-index: 0
+
+@mixin shadow-img
+    position: absolute
+    width: 100%
+    height: 100%
+    background-color: rgba(35, 35, 35, .65)
+    z-index: -10
+
+    
+*, *::after, *::before
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+html
+    scroll-behavior: smooth
+    scroll-padding-top: 10px
+    font-size: 62.5%
+
+body
+    position: relative
+    font-family: 'Montserrat', sans-serif
+    background-color: $bg-color
+
+section
+    margin: 3rem 0
+    overflow: hidden
+
+.wrapper
+    margin: 0 auto
+    width: 80%
+    max-width: 1440px
+
+h2
+    margin-top: 1.5em
+    padding-top: 2em
+    font-size: 2.4rem
+    font-weight: bold
+    text-align: center
+    text-transform: uppercase
+
+.underline
+    margin: 0 auto 5em
+    width: 60px
+    height: 4px
+    background-color: $main-color
+
+h3
+    margin: 2em 0
+    font-size: 2rem
+    font-weight: bold
+    text-align: center
+    letter-spacing: 2px
+
+// nav
+
+nav
+    a
+        color: $white-color
+        transition: color .3s
+
+    a:hover
+        color: $main-color
+
+    .navbar-brand
+        font-size: 1.8rem
+        font-family: 'Cinzel', serif
+
+    .fa-paint-roller
+        margin-right: 0.5em
+
+    .nav-link
+        font-size: 1.6rem
+        text-transform: capitalize
+        font-weight: bold
+
+    .fa-bars
+        padding: 1em
+        color: $white-color
+        font-size: 1.6rem
+
+    .active
+        color: $main-color
+
+.shadow-bg
+    background-color: rgba(35, 35, 35, .8)
+    transition: background-color .5s
+
+// header
+
+header
+    overflow: hidden
+
+    .hero-img
+        height: 100vh
+        background-image: url('../img/small-hero-img.jpg')
+        @include img-style
+
+    .hero-shadow
+        @include shadow-img
+
+    .hero-text
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        height: 100%
+        text-align: center
+        color: $white-color
+
+        h1
+            padding: 1em
+            text-transform: uppercase
+            font-family: 'Cinzel', serif
+            font-size: 3.0rem
+            font-weight: bold
+            letter-spacing: 2px
+            text-shadow: 2px 2px 5px #770101
+            animation-delay: .2s
+
+        p
+            padding-bottom: 1em
+            font-size: 1.6rem
+            font-weight: bold
+            animation-delay: .5s
+
+    .header-btn
+        position: relative
+        padding: 1em
+        width: 200px
+        background-color: transparent
+        border: 2px solid $main-color
+        color: $white-color
+        font-size: 1.6rem
+        font-weight: bold
+        letter-spacing: 1px
+        text-transform: uppercase
+        text-decoration: none
+        cursor: pointer
+        animation-delay: .8s
+        overflow: hidden
+        transition: background-color 1.5s
+
+    .header-btn::before
+        display: block
+        position: absolute
+        top: -20px
+        left: -130px
+        height: 180%
+        width: 100px
+        content: ''
+        background-image: linear-gradient(-90deg, rgba(252, 181, 0, .3), rgba(252, 181, 0, .0))
+        transform: rotate(20deg)
+        transition: left 1.5s
+
+    .header-btn:hover::before
+        left: 130%
+        
+    .fa-arrow-down
+        display: none
+
+// main
+// aboutus
+
+#aboutus
+    .list-item
+        padding: 1em
+        font-size: 1.6rem
+        list-style: none
+        transition: font-weight .3s
+
+    .list-item:hover
+        font-weight: bold
+    
+    i
+        padding-right: 0.5em
+        font-size: 1.8rem
+
+    p
+        margin-top: 2em
+        font-size: 1.4rem
+
+    a
+        color: $main-color
+        font-weight: bold
+
+// aboutus-hero
+
+#aboutus-hero
+    .aboutus-hero-img
+        padding-bottom: 3em
+        background-image: url('../img/small-aboutus-hero.jpg')
+        color: $white-color
+        @include img-style
+
+    .aboutus-shadow
+        @include shadow-img
+
+    h3
+        margin-bottom: 0
+        padding-top: 3em
+
+    .aboutus-hero-item
+        padding: 0 2em 1em
+        transition: color .3s
+
+        i
+            margin-top: 2em
+            font-size: 3rem
+
+        h4
+            font-size: 1.8rem
+            text-transform: uppercase
+
+        p
+            padding-top: 0.5em
+            font-size: 1.4rem
+
+    .aboutus-hero-item:hover
+        color: $main-color
+
+// team
+
+#team
+    .cards
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        width: 100%
+
+    .card-profile
+        position: relative
+        margin: 1.5em 0
+        width: 100%
+        height: 400px
+        text-align: center
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+        border-radius: 15px
+        box-shadow: 2px 2px 5px $main-color
+        overflow: hidden
+
+    .card-one
+        background-image: url('../img/card-img-one.png')
+
+    .card-two
+        background-image: url('../img/card-img-two.png')
+
+    .card-three
+        background-image: url('../img/card-img-three.png')
+
+    .team-btn
+        position: absolute
+        top: 1px
+        left: 1px
+        padding: 0.5em
+        background: none
+        border: none
+        color: $main-color
+        font-size: 3rem
+        text-shadow: 1px 1px 3px rgb(0, 0, 0)
+        cursor: crosshair
+        z-index: 1
+
+    .team-btn:hover~.card-text
+        clip-path: circle(120% at 50% 90%)
+
+    .card-text
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        position: absolute
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+        padding: 3em 1em
+        background-color: rgba(35, 35, 35, .8)
+        color: $white-color
+        font-weight: bold
+        clip-path: circle(0 at 50% 90%)
+        transition: clip-path .8s
+
+        h4
+            font-size: 2.2rem
+            margin-bottom: 1em
+            text-transform: uppercase
+
+        p
+            font-size: 1.6rem
+
+// reviews
+
+#reviews
+    .reviews-hero-img
+        background-image: url('../img/reviews-small.jpg')
+        @include img-style
+
+    .reviews-shadow
+        @include shadow-img
+
+    h2
+        color: $white-color
+
+    .box-text
+        display: flex
+        justify-content: flex-end
+        align-items: flex-end
+        flex-direction: column
+        margin: 0 2em 4em
+        padding: 2em
+        height: 300px
+        background-color: rgba(255, 255, 255, .7)
+        color: $dark-color
+        border-right: 3px solid $main-color
+        border-bottom: 3px solid $main-color
+        border-radius: 8px
+        transition: transform .3s
+
+        p
+            font-weight: bold
+
+        i
+            font-size: 0.8rem
+
+        strong
+            font-size: 1.2rem
+            font-style: italic
+
+    .box-text:hover
+        transform: scale(1.1)
+
+    .fa-quote-left
+        margin-right: 0.7em
+
+    .fa-quote-right   
+        margin-left: 0.7em
+
+// gallery
+
+#gallery
+    .carousel-indicators
+        button
+            height: 4px
+            width: 80px
+            background-color: $main-color
+
+    img
+        height: 300px
+        object-fit: cover
+
+// contact
+
+#contact
+    margin-bottom: 0
+    overflow: hidden
+
+    .contact-hero-img
+        background-image: url('../img/small-contact-img.jpg')
+        color: $white-color
+        @include img-style
+
+    .contact-shadow
+        @include shadow-img
+        
+    .contact-box
+        text-align: center
+
+        h3
+            margin-top: 1.5em
+            margin-bottom: 0.5em
+
+        p
+            font-size: 1.2rem
+            font-weight: bold
+
+        i
+            font-size: 1.4rem
+            color: $main-color
+
+
+    .fa-phone-volume
+        padding-left: 1em
+        padding-right: 0.3em
+
+    .contact-form
+        padding-bottom: 3em
+
+        h3
+            margin-top: 2.5em
+            margin-bottom: 1em
+
+    .form-label
+        font-size: 1.4rem
+
+    .form-control
+        padding: 0.7em
+        border: 1px solid transparent
+        box-shadow: 2px 2px 2px $main-color
+
+    .btn-light
+        margin-top: 1em
+        padding: 0.7em
+        width: 100%
+        font-size: 1.2rem
+        font-weight: bold
+        border: 1px solid transparent
+        box-shadow: 2px 2px 2px $main-color
+        transition: background-color .3s
+
+    .btn-light:hover
+        background-color: $main-color
+
+    .form-box .alert-info
+        margin-top: 0.5em
+        font-size: 1.6rem
+        font-weight: bold
+        color: rgb(255, 0, 0)
+        background: none
+        visibility: hidden
+
+    .form-box.show-error .alert-info
+        visibility: visible
+
+    .popup
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        position: absolute
+        top: -190px
+        left: 50%
+        transform: translate(-50%, -50%)
+        padding: 0 0.5em
+        width: 90%
+        height: 200px
+        background-color: $dark-color
+        border: 2px solid $main-color
+        border-radius: 8px
+        transition: top .5s
+
+        p
+            font-size: 1.2rem
+            text-align: center
+
+    .close-popup
+        width: 80%
+
+    .show-popup
+        top: 50%
+
+
+// footer
+
+footer
+    padding: 1em
+    background-color: rgba(35, 35, 35, .65)
+    color: $white-color
+    font-size: 1.5rem
+    text-align: center
+
+// media
+
+@media (min-width: 389px)
+    #team
+        .card-profile
+            width: 80%
+            height: 425px
+
+    #reviews
+        .box-text
+            p
+                font-size: 1.2rem
+
+            strong
+                font-size: 1.4rem
+
+@media (min-width: 441px)
+    #team
+        .card-profile
+            width: 65%
